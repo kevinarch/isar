@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
     export NDK_HOST_TAG="darwin-x86_64"
@@ -10,7 +10,8 @@ else
 fi
 
 NDK=${ANDROID_NDK_HOME:-${ANDROID_NDK_ROOT:-"$ANDROID_SDK_ROOT/ndk"}}
-COMPILER_DIR="$NDK/toolchains/llvm/prebuilt/$NDK_HOST_TAG/bin"
+
+COMPILER_DIR="$NDK/$ANDROID_NDK_VERSION/toolchains/llvm/prebuilt/$NDK_HOST_TAG/bin"
 export PATH="$COMPILER_DIR:$PATH"
 
 echo "$COMPILER_DIR"
@@ -34,6 +35,8 @@ export CC_aarch64_linux_android=$COMPILER_DIR/aarch64-linux-android21-clang
 export AR_aarch64_linux_android=$COMPILER_DIR/llvm-ar
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER=$COMPILER_DIR/aarch64-linux-android21-clang
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_AR=$COMPILER_DIR/llvm-ar
+
+echo "Param: $1"
 
 if [ "$1" = "x86" ]; then
   rustup target add i686-linux-android

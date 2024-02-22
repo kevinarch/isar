@@ -19,6 +19,7 @@ Future<void> loadAssets(PackageAndVersion p) async {
   final isar = Isar.openSync(
     [PackageSchema, AssetSchema],
     inspector: false,
+    directory: Directory.systemTemp.path
   );
 
   Asset? readme;

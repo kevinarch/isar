@@ -19,7 +19,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.0.0
-  google_fonts: ^3.0.1
+  google_fonts: ^6.1.0
   isar: *isar_version
   isar_flutter_libs: *isar_version
   json_annotation: ^4.6.0

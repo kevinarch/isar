@@ -1,0 +1,5 @@
+dependency_overrides:
+  isar: 
+    path: ../../packages/isar
+  isar_flutter_libs:
+    path: ../../packages/isar_flutter_libs
